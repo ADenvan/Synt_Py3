@@ -1,0 +1,218 @@
+[
+  {
+    "number": "1",
+    "categories": "basic",
+    "question": "Что будет результатом выполнения следующего кода?",
+    "answer_choices": {
+      "a": "<class 'int'>",
+      "b": "<class 'string'>",
+      "c": "<class 'float'>",
+      "d": "Ошибка выполнения"
+    },
+    "correct_answer": "<class 'int'>"
+  },
+  {
+    "number": "2",
+    "categories": "basic",
+    "question": "Какой метод позволяет добавить элемент в конец списка?",
+    "answer_choices": {
+      "a": "append()",
+      "b": "insert()",
+      "c": "add()",
+      "d": "extend()"
+    },
+    "correct_answer": "append()"
+  },
+  {
+    "number": "3",
+    "categories": "basic",
+    "question": "Что делает функция range(1, 10, 2)?",
+    "answer_choices": {
+      "a": "Возвращает числа от 1 до 10 не включительно с шагом 2",
+      "b": "Возвращает числа от 1 до 10 включительно",
+      "c": "Возвращает числа от 1 до 9 включительно",
+      "d": "Возвращает числа от 2 до 10 не включительно с шагом 2"
+    },
+    "correct_answer": "Возвращает числа от 1 до 10 не включительно с шагом 2"
+  },
+  {
+    "number": "4",
+    "categories": "basic",
+    "question": "Как получить доступ к элементу списка по индексу?",
+    "answer_choices": {
+      "a": "list.get(index)",
+      "b": "list[index]",
+      "c": "list->index",
+      "d": "list(index)"
+    },
+    "correct_answer": "list[index]"
+  },
+  {
+    "number": "5",
+    "categories": "basic",
+    "question": "Какой из следующих способов НЕ является правильным для создания словаря?",
+    "answer_choices": {
+      "a": "d = dict()",
+      "b": "d = {}",
+      "c": "d = dict([])",
+      "d": "d = <[]>"
+    },
+    "correct_answer": "d = <[]>"
+  },
+  {
+    "number": "6",
+    "categories": "basic",
+    "question": "Что делает следующий код?",
+    "answer_choices": {
+      "a": "Создает список из квадратных корней чисел от 0 до 4",
+      "b": "Создает список из квадратов чисел от 0 до 4",
+      "c": "Генерирует ошибку",
+      "d": "Создает генератор квадратов чисел от 0 до 4"
+    },
+    "correct_answer": "Создает список из квадратов чисел от 0 до 4"
+  },
+  {
+    "number": "7",
+    "categories": "basic",
+    "question": "Какой из следующих вариантов верно объявляет функцию в Python?",
+    "answer_choices": {
+      "a": "function myFunc():",
+      "b": "def myFunc():",
+      "c": "lambda myFunc():",
+      "d": "func myFunc():"
+    },
+    "correct_answer": "def myFunc():"
+  },
+  {
+    "number": "8",
+    "categories": "basic",
+    "question": "Как можно обработать исключение в Python?",
+    "answer_choices": {
+      "a": "try ... except",
+      "b": "try ... catch",
+      "c": "if ... else",
+      "d": "do ... while"
+    },
+    "correct_answer": "try ... except"
+  },
+  {
+    "number": "9",
+    "categories": "basic",
+    "question": "Какой символ используется для комментирования кода в Python?",
+    "answer_choices": {
+      "a": "//",
+      "b": "#",
+      "c": "/* */",
+      "d": "<!-- -->"
+    },
+    "correct_answer": "#"
+  },
+  {
+    "number": "10",
+    "categories": "basic",
+    "question": "Какое ключевое слово используется для создания класса в Python?",
+    "answer_choices": {
+      "a": "class",
+      "b": "struct",
+      "c": "function",
+      "d": "object"
+    },
+    "correct_answer": "class"
+  },
+  {
+    "number": "11",
+    "categories": "basic",
+    "question": "Что выведет следующий код? x = \"awesome\"\ndef myfunc():\n    print(\"Python is \" + x)\nmyfunc()",
+    "answer_choices": {
+      "a": "Python is awesome",
+      "b": "Python is x",
+      "c": "Ошибка выполнения",
+      "d": "x"
+    },
+    "correct_answer": "Python is awesome"
+  },
+  {
+    "number": "12",
+    "categories": "basic",
+    "question": "Какой оператор используется для возведения в степень?",
+    "answer_choices": {
+      "a": "^",
+      "b": "%",
+      "c": "**",
+      "d": "//"
+    },
+    "correct_answer": "**"
+  },
+  {
+    "number": "13",
+    "categories": "basic",
+    "question": "Какой метод удаляет последний элемент из списка?",
+    "answer_choices": {
+      "a": "pop()",
+      "b": "push()",
+      "c": "delete()",
+      "d": "remove()"
+    },
+    "correct_answer": "pop()"
+  },
+  {
+    "number": "14",
+    "categories": "basic",
+    "question": "Какое исключение возникает при делении на ноль?",
+    "answer_choices": {
+      "a": "ValueError",
+      "b": "ZeroDivisionError",
+      "c": "TypeError",
+      "d": "DivisionByZeroError"
+    },
+    "correct_answer": "ZeroDivisionError"
+  },
+  {
+    "number": "15",
+    "categories": "basic",
+    "question": "Как в Python проверить, равно ли число 10 переменной x?",
+    "answer_choices": {
+      "a": "x == 10",
+      "b": "x = 10",
+      "c": "x.equals(10)",
+      "d": "equals(x, 10)"
+    },
+    "correct_answer": "x == 10"
+  },
+  {
+    "number": "16",
+    "categories": "basic",
+    "question": "Что делает break в цикле?",
+    "answer_choices": {
+      "a": "Прерывает выполнение цикла и продолжает выполнение кода после цикла",
+      "b": "Пропускает текущую итерацию и переходит к следующей",
+      "c": "Останавливает выполнение программы",
+      "d": "Ничего из перечисленного"
+    },
+    "correct_answer": "Прерывает выполнение цикла и продолжает выполнение кода после цикла"
+  },
+  {
+    "number": "17",
+    "categories": "basic",
+    "question": "Какой тип данных используется для хранения True или False?",
+    "answer_choices": {
+      "a": "Boolean",
+      "b": "Int",
+      "c": "String",
+      "d": "Float"
+    },
+    "correct_answer": "Boolean"
+  },
+  {
+    "number": "18",
+    "categories": "basic",
+    "question": "Как в Python создать пустой список?",
+    "answer_choices": {
+      "a": "list = list()",
+      "b": "list = []",
+      "c": "Оба варианта верны",
+      "d": "Ни один из вариантов"
+      },
+      "correct_answer": "Оба варианта верны"
+    }
+  ]
