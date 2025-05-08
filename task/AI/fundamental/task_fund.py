@@ -44,7 +44,7 @@ task_ai_fund = {
   "id": 7,
   "question": "Написать функцию, которая принимает имя файла и возвращает кортеж (количество строк, количество слов)",
   "data": ["Файл text.txt с содержимым: Hello world Python is great","(2,5)", None],
-  "teg": ["file"],
+  "teg": ["file", "open"],
   "helper": None
 }, {
   "id": 8,
