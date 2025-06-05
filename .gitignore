@@ -172,3 +172,13 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+
+
+# Файлы с ключами и учётными данными
+creds.json
+secrets.json
+config/secret_config.json
+Parsing-Scraping/baza-knig-API/creds.json
+
+# Python-артефакты
+# __pycache__/
