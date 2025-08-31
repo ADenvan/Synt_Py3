@@ -1,0 +1,77 @@
+# -------------------------------------
+# -------------------------------------
+
+class BankAccount():
+    pass
+
+
+# -------------------------------------
+# 7.
+def count_lines_and_words(filename: str):
+    """Возвращает (кол-во строк, кол-во слов) в файле"""
+    with open(filename, "r", encoding="utf-8") as f:
+        lines = f.readlines()
+    num_lines = len(lines)
+    num_words = sum(len(line.split()) for line in lines)
+    return num_lines, num_words
+
+# -------------------------------------
+# 6.
+def factorial(n):
+    if n < 0:
+        raise ValueError("Negstiv value")
+    if n in (0,1):
+        return 1
+    return n * factorial(n - 1)
+
+# -------------------------------------
+# 5.
+def fibonacci(n: int) -> list[int]:
+    if n <= 0:
+        return []
+    if n == 1:
+        return [0]
+    seq = [0, 1]
+    while len(seq) < n:
+        seq.append(seq[-1] + seq[-2])
+    return seq
+
+# -------------------------------------
+# 4.
+def sieve_of_eratosthenes(n: int) -> list[int]:
+    sieve = [True] * (n + 1)
+    sieve[0:2] = [False, False]
+    primes = []
+    for i in range(2, n + 1):
+        if sieve[i]:
+            primes.append(i)
+            for j in range(i * i, n + 1, i):
+                sieve[j] = False
+    return primes
+
+# -------------------------------------
+# 3.
+def char_frequency(str_: str) -> dict[str, str]:
+    result = {}
+    for char in str_:
+        result[char] = result.get(char, 0) + 1
+    return result
+
+# -------------------------------------
+# 2.
+def custom_sort(nums: list) -> list[int]:
+    if len(nums) <= 0:
+        return nums
+    elem = nums[0]
+    left = list(filter(lambda x: x < elem, nums))
+    center = [i for i in nums if i == elem]
+    right = list(filter(lambda x: x > elem, nums))
+    return custom_sort(left) + center + custom_sort(right)
+# -------------------------------------
+# 1. 
+def is_palindrome(st:str) -> bool:
+    repl = st.lower().replace(" ", "")
+    result = True if repl[::-1] == repl else False
+    return result
+        
+    
