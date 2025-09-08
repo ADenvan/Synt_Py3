@@ -1,8 +1,53 @@
+import time
+from typing import Tuple
+# -------------------------------------
+# -------------------------------------
 # -------------------------------------
 # -------------------------------------
 
-class BankAccount():
-    pass
+
+
+
+
+
+
+# -------------------------------------
+# 10.
+def timing_decorator(func):
+    """Декоратор для измерения времени выполнения функции"""
+    def wrapper(*args, **kwargs):
+        start = time.time()
+        result = func(*args, **kwargs)
+        end = time.time()
+        print(f"Функция выполнилась за {end - start:.4f} секунд(ы)")
+        return result
+    return wrapper
+# -------------------------------------
+# 9.
+def common_elements(list_1: list, list_2: list):
+    return set(list_1) & set(list_2)
+
+# -------------------------------------
+# 8.
+class BankAccount:
+    """Простейший класс банковского счёта"""
+    def __init__(self, balance: float = 0.0):
+        self.balance = balance
+
+    def deposit(self, amount: float) -> None:
+        if amount < 0:
+            raise ValueError("Нельзя внести отрицательную сумму")
+        self.balance += amount
+
+    def withdraw(self, amount: float) -> None:
+        if amount < 0:
+            raise ValueError("Нельзя снять отрицательную сумму")
+        if amount > self.balance:
+            raise ValueError("Недостаточно средств")
+        self.balance -= amount
+
+    def get_balance(self) -> float:
+        return self.balance
 
 
 # -------------------------------------

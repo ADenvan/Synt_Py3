@@ -39,7 +39,7 @@ task_ai_fund = [
         "id": 6,
         "question": "Написать функцию для вычисления факториала числа с использованием рекурсии. Обработать случай отрицательных чисел",
         "data": ["n = 5", "120", None],
-        "teg": ["easy","recursion"],
+        "teg": ["easy", "recursion"],
         "helper": None,
     },
     {
@@ -56,7 +56,14 @@ task_ai_fund = [
     {
         "id": 8,
         "question": "Реализовать класс BankAccount с методами: deposit(amount) (внести средства), withdraw(amount) (снять средства), get_balance() (вернуть текущий баланс).",
-        "data": ["account = BankAccount(100)", "120", None],
+        "data": [
+            "account = BankAccount(100)",
+            "account.deposit(50)",
+            "account.withdraw(30)",
+            "account.get_balance()",
+            "120",
+            None,
+        ],
         "teg": ["easy", "class"],
         "helper": None,
     },

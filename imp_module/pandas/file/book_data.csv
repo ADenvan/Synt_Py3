@@ -1,2 +1,11 @@
-name book, book, autor, cycle, price
-ai, 1, Dan, ai_atac, 1300
+user_id,city,category_name,price,activation_data,user_typ,year,month
+1,Moscow,Electronics,1250,2025-01-15,premium,2025,1
+2,London,Furniture,560,2025-02-10,standard,2025,2
+3,Berlin,Books,45,2025-03-05,guest,2025,3
+4,Paris,Clothes,230,2025-04-22,premium,2025,4
+5,Rome,Sports,320,2025-05-17,standard,2025,5
+6,Madrid,Electronics,980,2025-06-02,guest,2025,6
+7,Tokyo,Food,75,2025-07-19,premium,2025,7
+8,New York,Furniture,870,2025-08-25,standard,2025,8
+9,Kyiv,Books,60,2025-09-03,guest,2025,9
+10,Warsaw,Clothes,410,2025-10-12,premium,2025,10
