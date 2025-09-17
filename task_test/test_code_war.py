@@ -1,15 +1,124 @@
 import unittest
-from task_test.code_war.main import name_shuffler,validate_hello,points
+from task_test.code_war.main import name_shuffler, validate_hello, points, add_binary, no_space, array_space, who_is_paying, merge_arrays,cookie, grader, subtract_sum, reverse_words
 # from main import name_shuffler
+from random import randint
 
 
 # ---------------------------------------
 # ---------------------------------------
+# ---------------------------------------
+# 47.
+class Test_47_(unittest.TestCase):
+    pass
+# ---------------------------------------
+# 46.
+class Test_46_(unittest.TestCase):
+    pass
+# ---------------------------------------
+# 45.
+class Test_45_(unittest.TestCase):
+    pass
+# ---------------------------------------
+# 44.
+class Test_44_(unittest.TestCase):
+    pass
+# ---------------------------------------
+# 43.
+class Test_43_(unittest.TestCase):
+    def test_grader(self):
+        self.assertEqual(grader(1), "A")
+        self.assertEqual(grader(1.01), "F")
+        self.assertEqual(grader(0.20), "F")
+        self.assertEqual(grader(0.70), "C")
+        self.assertEqual(grader(0.80), "B")
+        self.assertEqual(grader(0.90), "A")
+        self.assertEqual(grader(0.60), "D")
+        self.assertEqual(grader(0.50), "F")
+        self.assertEqual(grader(0.00), "F")
+
+# ---------------------------------------
+# 42.
+class Test_42_(unittest.TestCase):
+    def test_subtract_sum(self):
+    # from math import factorial
+
+
+        for _ in range(100):
+            n = randint(11,10000)
+            # @test.it(f"testing for subtract_sum({n})")
+            # def test_case(self):
+            self.assertEqual(subtract_sum(n), "apple")
+            self.assertEqual(subtract_sum(10),"apple")
+
+
+
+# ---------------------------------------
+# 41.
+class Test_41_(unittest.TestCase):
+    def test_reverse_words(self):
+        self.assertEqual(reverse_words("hello world!"), "world! hello")
+        self.assertEqual(reverse_words("yoda doesn't speak like this" ),  "this like speak doesn't yoda")
+        self.assertEqual(reverse_words("foobar"                       ),  "foobar")
+        self.assertEqual(reverse_words("kata editor"                  ),  "editor kata")
+        self.assertEqual(reverse_words("row row row your boat"        ),  "boat your row row row")
+# ---------------------------------------
+# 40.
+class Test_40_(unittest.TestCase):
+    def test_cookie(self):
+        self.assertEqual(cookie("Ryan"), "Who ate the last cookie? It was Zach!")
+        self.assertEqual(cookie(2.3), "Who ate the last cookie? It was Monica!")
+        self.assertEqual(cookie(26), "Who ate the last cookie? It was Monica!")
+        self.assertEqual(cookie(True), "Who ate the last cookie? It was the dog!")
+        self.assertEqual(cookie("True"), "Who ate the last cookie? It was Zach!")
+        self.assertEqual(cookie(False), "Who ate the last cookie? It was the dog!")
+        self.assertEqual(cookie(1.98528462),"Who ate the last cookie? It was Monica!")
+# ---------------------------------------
+# 39.
+class Test_39_(unittest.TestCase):
+    def test_merge_arrays(self):
+        self.assertEqual(merge_arrays([1, 3, 5], [2, 4, 6]), [1, 2, 3, 4, 5, 6])
+        self.assertEqual(merge_arrays([2, 4, 8], [2, 4, 6]), [2, 4, 6, 8])
+# ---------------------------------------
+# 38.
+class Test_38_(unittest.TestCase):
+    def test_who_is_paying(self):
+        self.assertEqual(who_is_paying("Mexico"),["Mexico", "Me"])
+        self.assertEqual(who_is_paying("Melania"),["Melania", "Me"])
+        self.assertEqual(who_is_paying("Melissa"),["Melissa", "Me"])
+        self.assertEqual(who_is_paying("Me"),["Me"])
+        self.assertEqual(who_is_paying(""), [""])
+        self.assertEqual(who_is_paying("I"), ["I"])
 # 37.
+class Test_37_(unittest.TestCase):
+    def test_array_space(self):
+        self.assertEqual(array_space('1,2,3'), '2')
+        self.assertEqual(array_space('1,2,3,4'), '2 3')
+        self.assertEqual(array_space('1,2,3,4,5'), '2 3 4')
+    # @test.it("Should return None if the final result is an empty string")
+    def test_array_space_none(self):
+        self.assertEqual(array_space(''), None)
+        self.assertEqual(array_space('1'), None)
+        self.assertEqual(array_space('1,2'), None)
+
 # ---------------------------------------
 # 36.
+class Test_36_(unittest.TestCase):
+    def test_cases(self):
+        self.assertEqual(no_space('8 j 8   mBliB8g  imjB8B8  jl  B'), '8j8mBliB8gimjB8B8jlB')
+        self.assertEqual(no_space('8 8 Bi fk8h B 8 BB8B B B  B888 c hl8 BhB fd'), '88Bifk8hB8BB8BBBB888chl8BhBfd')
+        self.assertEqual(no_space('8aaaaa dddd r     '), '8aaaaaddddr')
+        self.assertEqual(no_space('jfBm  gk lf8hg  88lbe8 '), 'jfBmgklf8hg88lbe8')
+        self.assertEqual(no_space('8j aam'), '8jaam')
+
 # ---------------------------------------
 # 35.
+class Test_35_(unittest.TestCase):
+    def test_cases(self):
+        self.assertEqual(add_binary(1, 1), "10")
+        self.assertEqual(add_binary(0, 1), "1")
+        self.assertEqual(add_binary(1, 0), "1")
+        self.assertEqual(add_binary(2, 2), "100")
+        self.assertEqual(add_binary(51, 12), "111111")
 
 
 # ---------------------------------------
@@ -319,36 +428,76 @@ from task_test.code_war.main import name_shuffler,validate_hello,points
 #         bass_in.assertEqual(litres(1787), 893, 'should return 893 litres')
 #         bass_in.assertEqual(litres(0), 0, 'should return 0 litres')
 
+
 # 3.
-class Points_t(unittest.TestCase):
+class Test_03_Points_t(unittest.TestCase):
     def test_points(bass_in):
-        bass_in.assertEqual(points(['1:0', '2:0', '3:0', '4:0', '2:1', '3:1', '4:1', '3:2', '4:2', '4:3']), 30)
-        bass_in.assertEqual(points(['1:1', '2:2', '3:3', '4:4', '2:2', '3:3', '4:4', '3:3', '4:4', '4:4']), 10)
-        bass_in.assertEqual(points(['0:1', '0:2', '0:3', '0:4', '1:2', '1:3', '1:4', '2:3', '2:4', '3:4']), 0)
-        bass_in.assertEqual(points(['1:0', '2:0', '3:0', '4:0', '2:1', '1:3', '1:4', '2:3', '2:4', '3:4']), 15)
-        bass_in.assertEqual(points(['1:0', '2:0', '3:0', '4:4', '2:2', '3:3', '1:4', '2:3', '2:4', '3:4']), 12)
+        bass_in.assertEqual(
+            points(
+                ["1:0", "2:0", "3:0", "4:0", "2:1", "3:1", "4:1", "3:2", "4:2", "4:3"]
+            ),
+            30,
+        )
+        bass_in.assertEqual(
+            points(
+                ["1:1", "2:2", "3:3", "4:4", "2:2", "3:3", "4:4", "3:3", "4:4", "4:4"]
+            ),
+            10,
+        )
+        bass_in.assertEqual(
+            points(
+                ["0:1", "0:2", "0:3", "0:4", "1:2", "1:3", "1:4", "2:3", "2:4", "3:4"]
+            ),
+            0,
+        )
+        bass_in.assertEqual(
+            points(
+                ["1:0", "2:0", "3:0", "4:0", "2:1", "1:3", "1:4", "2:3", "2:4", "3:4"]
+            ),
+            15,
+        )
+        bass_in.assertEqual(
+            points(
+                ["1:0", "2:0", "3:0", "4:4", "2:2", "3:3", "1:4", "2:3", "2:4", "3:4"]
+            ),
+            12,
+        )
 
 
 # 2.
-class Validate_hello(unittest.TestCase):
+class Test_02_Validate_hello(unittest.TestCase):
     def test_validate_hello(bass_in):
         # bass_in.assertEqual(validate_hello('hello'), True)
         # bass_in.assertEqual(validate_hello('ciao bella!'), True)
-        for inp, exp in [('hello', True), ('ciao bella!', True), ('salut', True),
-                         ('hallo, salut', True), ('hombre! Hola!', True),
-                         ('Hallo, wie geht\'s dir?', True), ('AHOJ!', True),
-                         ('czesc', True), ('meh', False), ('Ahoj', True), ]:
-            bass_in.assertEqual(validate_hello(inp), exp, f"Testing for validate_hello({inp!r})")
+        for inp, exp in [
+            ("hello", True),
+            ("ciao bella!", True),
+            ("salut", True),
+            ("hallo, salut", True),
+            ("hombre! Hola!", True),
+            ("Hallo, wie geht's dir?", True),
+            ("AHOJ!", True),
+            ("czesc", True),
+            ("meh", False),
+            ("Ahoj", True),
+        ]:
+            bass_in.assertEqual(
+                validate_hello(inp), exp, f"Testing for validate_hello({inp!r})"
+            )
+
 
 # 1.
-class TestNameShuffler(unittest.TestCase):
+class Test_01_NameShuffler(unittest.TestCase):
     def test_name_shuffler(bass_in):
-        bass_in.assertEqual(name_shuffler('William O\'Brien'), 'O\'Brien William')
-        bass_in.assertEqual(name_shuffler('john McClane'), 'McClane john')
-        bass_in.assertEqual(name_shuffler('john McClane'), 'McClane john'),
-        bass_in.assertEqual(name_shuffler('Mary jeggins'), 'jeggins Mary'),
-        bass_in.assertEqual(name_shuffler('tom jerry'), 'jerry tom'),
-        bass_in.assertEqual(name_shuffler('Mary Jane'), 'Jane Mary'),
-        bass_in.assertEqual(name_shuffler('John Doe'), 'Doe John'),
-        bass_in.assertEqual(name_shuffler('William O\'Brien'), 'O\'Brien William'),
-        bass_in.assertEqual(name_shuffler('George Huffingquane-McGafferty'), 'Huffingquane-McGafferty George')
+        bass_in.assertEqual(name_shuffler("William O'Brien"), "O'Brien William")
+        bass_in.assertEqual(name_shuffler("john McClane"), "McClane john")
+        (bass_in.assertEqual(name_shuffler("john McClane"), "McClane john"),)
+        (bass_in.assertEqual(name_shuffler("Mary jeggins"), "jeggins Mary"),)
+        (bass_in.assertEqual(name_shuffler("tom jerry"), "jerry tom"),)
+        (bass_in.assertEqual(name_shuffler("Mary Jane"), "Jane Mary"),)
+        (bass_in.assertEqual(name_shuffler("John Doe"), "Doe John"),)
+        (bass_in.assertEqual(name_shuffler("William O'Brien"), "O'Brien William"),)
+        bass_in.assertEqual(
+            name_shuffler("George Huffingquane-McGafferty"),
+            "Huffingquane-McGafferty George",
+        )

@@ -1,15 +1,187 @@
 # from codeWars.number_tasks import number_tasks
 # from tasks.codeWars_tasks.number_tasks import number_tasks
 # # ---------------------------------------
-# # ---------------------------------------
-# # ---------------------------------------
-# # ---------------------------------------
-# # ---------------------------------------
+# 48.
 
+# # ---------------------------------------
+# 47.
+
+# # ---------------------------------------
+# 46.
+
+# # ---------------------------------------
+# 45.
+
+# # ---------------------------------------
+# 44.
+
+# # ---------------------------------------
+# 43.
+def grader(score):
+    # if type(score) == int:
+    #     return "A"
+    if score >= 0.00 and score <= 0.59 or score > 1.00:
+        return "F"
+    elif score >= 0.60 and score <= 0.69:
+        return "D"
+    elif score >= 0.70 and score <= 0.79:
+        return "C"
+    elif score >= 0.80 and score <= 0.89:
+        return "B"
+    elif score >= 0.90 and score <= 0.99:
+        return "A"
+    else:
+        return "A"
+def grader(score):
+    for limit, grade in [(0.9, "A"), (0.8, "B"), (0.7, "C"), (0.6, "D")]:
+        if limit <= score <= 1:
+            return grade
+    return 'F'
+
+# # ---------------------------------------
+# 42.
+fruit = {1:'kiwi',2:'pear',3:'kiwi',4:'banana',5:'melon',6:'banana',7:'melon',
+         8:'pineapple',9:'apple',10:'pineapple',11:'cucumber',12:'pineapple',
+         13:'cucumber',14:'orange',15:'grape',16:'orange',17:'grape',18:'apple',
+         19:'grape',20:'cherry',21:'pear',22:'cherry',23:'pear',24:'kiwi',
+         25:'banana',26:'kiwi',27:'apple',28:'melon',29:'banana',30:'melon',
+         31:'pineapple',32:'melon',33:'pineapple',34:'cucumber',35:'orange',
+         36:'apple',37:'orange',38:'grape',39:'orange',40:'grape',41:'cherry',
+         42:'pear',43:'cherry',44:'pear',45:'apple',46:'pear',47:'kiwi',
+         48:'banana',49:'kiwi',50:'banana',51:'melon',52:'pineapple',53:'melon',
+         54:'apple',55:'cucumber',56:'pineapple',57:'cucumber',58:'orange',
+         59:'cucumber',60:'orange',61:'grape',62:'cherry',63:'apple',
+         64:'cherry',65:'pear',66:'cherry',67:'pear',68:'kiwi',69:'pear',
+         70:'kiwi', 71:'banana',72:'apple',73:'banana',74:'melon',
+         75:'pineapple',76:'melon',77:'pineapple',78:'cucumber',79:'pineapple',
+         80:'cucumber',81:'apple',82:'grape',83:'orange',84:'grape',85:'cherry',
+         86:'grape',87:'cherry',88:'pear',89:'cherry',90:'apple',91:'kiwi',
+         92:'banana',93:'kiwi',94:'banana',95:'melon',96:'banana',97:'melon',
+         98:'pineapple',99:'apple',100:'pineapple'}
+def subtract_sum(n, fruit):
+    ret = sum([int(i) for i in str(n)])
+    num = n - ret
+
+    if num < 100:
+        for item in fruit:
+            if item.get(num):
+                return item.get(num)
+        return num
+    return subtract_sum(num)
+
+def subtract_sum(n):
+  n -= (sum([int(i) for i in str(n)]))
+  while not n in fruit:
+    n -= (sum([int(i) for i in str(n)]))
+  return fruit[n]
+def subtract_sum(number):
+    while True:
+        number -= sum(map(int, str(number)))
+        if number <= 100:
+            for e in fruit.split('\n'):
+                if str(number) in e:
+                    return e.split('-')[1]
+# # ---------------------------------------
+# 41.
+def reverse_words(words: str):
+    return " ".join(reversed(words.split(" ")))
+def reverseWords(str: str):
+    return " ".join(str.split(" ")[::-1])
+
+# # ---------------------------------------
+# 40.
+def cookie(x):
+    if type(x) == bool:
+        return "Who ate the last cookie? It was the dog!"
+    else:
+        ryan = [{"Ryan": "Zach", 2.3: "Monica", 26: "Monica", True: "the dog"}]
+        dc = "".join([i.get(x) for i in ryan])
+        return f"Who ate the last cookie? It was {dc}!"
+
+# == try except
+def cookie(x):
+    try:
+        who = {int: 'Monica', float: 'Monica', str: 'Zach'}[type(x)]
+    except KeyError:
+        who = 'the dog'
+    return 'Who ate the last cookie? It was %s!' % who
+
+# == format
+CULPRITS = {
+    str: 'Zach',
+    int: 'Monica', float: 'Monica'
+}
+def cookie(x):
+    return "Who ate the last cookie? It was {}!".format(CULPRITS.get(type(x), 'the dog'))
+
+
+# # ---------------------------------------
+# 39.
+def merge_arrays(first, second):
+    list_ = list(first + second)
+    sort_result = sorted(set(list_))
+    return sort_result
+
+def merge_arrays(first, second):
+    working = []
+    for e in first:
+        if e not in working:
+            working.append(e)
+    for i in second:
+        if i not in working:
+            working.append(i)
+    return sorted(working)
+# # ---------------------------------------
+# 38.
+def who_is_paying(name):
+    if len(name) <= 2:
+        a = [name]
+        return a
+    ch = name[0:2]
+
+    arr = [name]
+    arr.append(ch)
+    return arr
+
+def who_is_paying(name):
+    if len(name) > 2:
+        return [name, name[0:2]]
+    else:
+        return [name[0:len(name)]]
+
+
+# # ---------------------------------------
+# 37.
+def array_space(st: str):
+    n = st.split(",")
+    if len(n) < 3:
+        return
+    ap = []
+    for i in n:
+        ap.append(i)
+    ret = " ".join(ap[1:-1])
+    return ret
+
+def array(string: str):
+    split = string.split(",")
+    remove = split[1:-1]
+    return " ".join(remove) if remove else None
+
+def array(s: str):
+    r = ' '.join(s.split(',')[1:-1])
+    return r if r else None
+
+# # ---------------------------------------
+# 36.
+def no_space(x: str):
+    return "".join(x.split())
+    # return x.replace(" ", "")
 
 # # ---------------------------------------
 # 35.
-
+def add_binary(a, b):
+    return '{0:b}'.format(a+b)
+    # return bin(a+b).replace("0b", "")
 
 
 
