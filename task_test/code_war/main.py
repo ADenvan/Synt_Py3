@@ -1,20 +1,152 @@
+
 # from codeWars.number_tasks import number_tasks
 # from tasks.codeWars_tasks.number_tasks import number_tasks
 # # ---------------------------------------
+# # ---------------------------------------
+# 52.
+# # ---------------------------------------
+# 51.
+# # ---------------------------------------
+# 50.
+class Double_char():
+    def __init__(self, list_str: list):
+        self.list_str = list_str
+    def get_indx_(self, str_: str):
+        join_str = "".join(self.list_str)
+        idx = join_str.index(str_)
+        return idx
+
+    def str_c(self, str_: str):
+        ap = []
+        ls = self.list_str
+        for s in ls:
+            idx = self.get_indx_(s)
+            if s in str_:
+                ap.append(ls[idx] + s)
+        self.list_str = ap
+        return self.list_str
+
+    def ret_count_str(self, str_: str):
+        res = "".join(self.str_c(str_))
+        return res
+
+def double_char(st: str):
+    list_str = [i for i in st]
+    ret = Double_char(list_str)
+    res = ret.ret_count_str(st)
+    return res
+
+# # ---------------------------------------
+# 49.
+class Str_count():
+    def __init__(self, str_, letter):
+        self._str_ = str_
+        self._letter = letter
+        self._new_dict = {}
+
+    def str_c(self):
+        for item in self._str_:
+            self._new_dict[item] = self._new_dict.get(item, 0) + 1
+        return self._new_dict
+
+    def ret_count_str(self):
+        char = self._letter
+        new_dict = self.str_c()
+
+        return new_dict.get(char)
+
+def str_count(st: str, char: str):
+    ret = Str_count(st, char)
+    log_result = ret.ret_count_str()
+    if log_result is None:
+        return 0
+    else:
+        return log_result
+
+# # ---------------------------------------
 # 48.
+class sp_eng:
+    def __init__(self,  value="english"):
+        self.value = value
+
+    def is_lower(self, value_str: str):
+        return value_str.lower()
+
+    def __equel__(self, st: str):
+        if self.value in self.is_lower(st):
+            return True
+        else:
+            return False
+
 
 # # ---------------------------------------
 # 47.
+def summation(n):
+    result = sum([int(i) for i in range(0, n+1)])
+    return result
 
+def summation(n):
+    count = 0
+    i = 0
+    while i < n:
+        i += 1
+        count = count + i
+    return count
 # # ---------------------------------------
 # 46.
+def to_alternating_case(word):
+    from re import search
+    ls = []
+    for elem in word:
+        if search(r'[a-z]', elem):
+            ls.append(elem.upper())
+        elif search(r'[A-Z]', elem):
+            ls.append(elem.lower())
+        else:
+            ls.append(elem)
+    return "".join(ls)
 
+def to_alternating_case(string):
+    new_string = ''
+    for char in string:
+        if char.isupper():
+            new_string += char.lower()
+        else:
+            new_string += char.upper()
+    return new_string
 # # ---------------------------------------
 # 45.
+# def wrap(wrap):
+#     dic = {}
+#     dic["value"] = wrap
+#     return dic
+
+class wrap:
+    def __init__(self,value,key="value"):
+        self.__value = value
+        self.__key = key
+    def __getitem__(self,key):
+        if self.__key == key:
+            return self.__value
+        raise KeyError("Your key", key,"is incorrect")
 
 # # ---------------------------------------
 # 44.
+def is_uppercase(inp):
+    ret = True if inp == inp.upper() else False
+    return ret
 
+def is_uppercase(inp):
+    for letter in inp:
+        if letter in 'abcdefghijklmnopqrstuvwxyz':
+            return False
+    return True
+
+def is_uppercase(inp):
+    from re import search
+    if search(r'[a-z]', inp):
+        return False
+    return True
 # # ---------------------------------------
 # 43.
 def grader(score):

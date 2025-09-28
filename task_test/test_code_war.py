@@ -1,27 +1,93 @@
 import unittest
-from task_test.code_war.main import name_shuffler, validate_hello, points, add_binary, no_space, array_space, who_is_paying, merge_arrays,cookie, grader, subtract_sum, reverse_words
+from task_test.code_war.main import name_shuffler, validate_hello, points, add_binary, no_space, array_space, who_is_paying, merge_arrays,cookie, grader, subtract_sum, reverse_words, is_uppercase, wrap, to_alternating_case, summation, sp_eng, str_count, double_char
 # from main import name_shuffler
 from random import randint
 
-
 # ---------------------------------------
 # ---------------------------------------
+# ---------------------------------------
+# ---------------------------------------
+# ---------------------------------------
+# 51.
+class Test_51_(unittest.TestCase):
+    pass
+# ---------------------------------------
+# 50.
+class Test_50_(unittest.TestCase):
+    def test_double_char(self):
+        self.assertEqual(double_char("String"),"SSttrriinngg")
+        self.assertEqual(double_char("Hello World"),"HHeelllloo  WWoorrlldd")
+        self.assertEqual(double_char("1234!_ "),"11223344!!__  ")
+# ---------------------------------------
+# 49.
+class Test_49_(unittest.TestCase):
+    def test_str_count(self):
+        self.assertEqual(str_count('hello', 'l'), 2)
+        self.assertEqual(str_count('hello', 'e'), 1)
+        self.assertEqual(str_count('codewars', 'c'), 1)
+        self.assertEqual(str_count('ggggg', 'g'), 5)
+        self.assertEqual(str_count('hello world', 'o'), 2)
+        self.assertEqual(str_count('', 'z'), 0)
+# ---------------------------------------
+# 48.
+class Test_48_(unittest.TestCase):
+    def test_sp_eng(self):
+        res = sp_eng()
+        self.assertEqual(res.__equel__("english"), True)
+        self.assertEqual(res.__equel__("egnlish"), False)
+        self.assertEqual(res.__equel__("engliish"), False)
+        self.assertEqual(res.__equel__("1234egn lis;h"), False)
+        self.assertEqual(res.__equel__("1234english ;k"), True)
+        self.assertEqual(res.__equel__("English"), True)
+        self.assertEqual(res.__equel__("eNgliSh"), True)
+        self.assertEqual(res.__equel__("1234#$%%eNglish ;k9"), True)
+        self.assertEqual(res.__equel__("EGNlihs"), False)
+        self.assertEqual(res.__equel__("1234englihs**"), False)
 # ---------------------------------------
 # 47.
 class Test_47_(unittest.TestCase):
-    pass
+     def test_summation(self):
+        self.assertEqual(summation(1), 1)
+        self.assertEqual(summation(8), 36)
+        self.assertEqual(summation(22), 253)
+        self.assertEqual(summation(100), 5050)
+        self.assertEqual(summation(213), 22791)
+
 # ---------------------------------------
 # 46.
 class Test_46_(unittest.TestCase):
-    pass
+    def test_fixed(self):
+        self.assertEqual(to_alternating_case("hello world"), "HELLO WORLD")
+        self.assertEqual(to_alternating_case("HELLO WORLD"), "hello world")
+        self.assertEqual(to_alternating_case("hello WORLD"), "HELLO world")
+        self.assertEqual(to_alternating_case("HeLLo WoRLD"), "hEllO wOrld")
+        self.assertEqual(to_alternating_case("12345"), "12345")
+        self.assertEqual(to_alternating_case("1a2b3c4d5e"), "1A2B3C4D5E")
+        self.assertEqual(to_alternating_case("String.prototype.toAlternatingCase"), "sTRING.PROTOTYPE.TOaLTERNATINGcASE")
+        self.assertEqual(to_alternating_case(to_alternating_case("Hello World")), "Hello World")
+
 # ---------------------------------------
 # 45.
 class Test_45_(unittest.TestCase):
-    pass
+    def test_case(self):
+        res = wrap("my_test")
+        self.assertEqual(res["value"], "my_test")
+        self.assertEqual(wrap(343)["value"], 343)
+        obj = {"test":"testy"}
+        self.assertEqual(wrap(obj)["value"], obj)
+
 # ---------------------------------------
 # 44.
 class Test_44_(unittest.TestCase):
-    pass
+    def test_cases(self):
+        def gen_test_case(inp, res):
+            self.assertEqual(is_uppercase(inp), res, inp)
+        gen_test_case("c", False)
+        gen_test_case("C", True)
+        gen_test_case("hello I AM DONALD", False)
+        gen_test_case("HELLO I AM DONALD", True)
+        gen_test_case("$%&", True)
+
 # ---------------------------------------
 # 43.
 class Test_43_(unittest.TestCase):
