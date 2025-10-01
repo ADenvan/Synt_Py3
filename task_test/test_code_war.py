@@ -1,16 +1,30 @@
 import unittest
-from task_test.code_war.main import name_shuffler, validate_hello, points, add_binary, no_space, array_space, who_is_paying, merge_arrays,cookie, grader, subtract_sum, reverse_words, is_uppercase, wrap, to_alternating_case, summation, sp_eng, str_count, double_char
+from task_test.code_war.main import name_shuffler, validate_hello, points, add_binary, no_space, array_space, who_is_paying, merge_arrays,cookie, grader, subtract_sum, reverse_words, is_uppercase, wrap, to_alternating_case, summation, sp_eng, str_count, double_char, reverse_seq, first_non_consecutive
 # from main import name_shuffler
 from random import randint
 
 # ---------------------------------------
 # ---------------------------------------
 # ---------------------------------------
+# 53.
+class Test_53_(unittest.TestCase):
+    pass
 # ---------------------------------------
+# 52.
+class Test_52_(unittest.TestCase):
+    def test_first_non_consecutive(self):
+        self.assertEqual(first_non_consecutive([1,2,3,4,6,7,8]), 6)
+        self.assertEqual(first_non_consecutive([1,2,3,4,5,6,7,8]), None)
+        self.assertEqual(first_non_consecutive([4,6,7,8,9,11]), 6)
+        self.assertEqual(first_non_consecutive([4,5,6,7,8,9,11]), 11)
+        self.assertEqual(first_non_consecutive([31,32]), None)
+        self.assertEqual(first_non_consecutive([-3,-2,0,1]), 0)
+        self.assertEqual(first_non_consecutive([-5,-4,-3,-1]), -1)
 # ---------------------------------------
 # 51.
 class Test_51_(unittest.TestCase):
-    pass
+    def test_reverse_seq(self):
+        self.assertEqual(reverse_seq(5),[5,4,3,2,1])
 # ---------------------------------------
 # 50.
 class Test_50_(unittest.TestCase):

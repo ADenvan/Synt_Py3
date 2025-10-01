@@ -4,8 +4,39 @@
 # # ---------------------------------------
 # # ---------------------------------------
 # 52.
+def first_non_consecutive(n: list):
+    idx = n[0]
+    for i in n:
+        if idx != i:
+            return i
+        idx += 1
+
+
 # # ---------------------------------------
 # 51.
+class Reverse_seq():
+    def __init__(self, n):
+        self._n = n
+        self._ls = []
+
+    def str_c(self):
+        num = [i for i in range(self._n)]
+        ret = len(num[::-1]) + 1
+        return ret
+
+    def ret_count_str(self):
+        ap = []
+        for _ in range(self._n):
+            self._n -= 1
+            ap.append(self.str_c())
+        return ap
+
+def reverse_seq(n: int):
+    ret = Reverse_seq(n)
+    log = ret.ret_count_str()
+
+    return log
+
 # # ---------------------------------------
 # 50.
 class Double_char():
